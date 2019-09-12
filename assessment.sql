@@ -64,7 +64,7 @@ INNER JOIN customer ON address.address_id = customer.address_id;
 -- 11. Find out actors whose last name starts with character A, B or C.
 Select *
 From actor
-Where LEFT(last_name, 1) = 'A' or LEFT(last_name, 1) = 'B' or LEFT(last_name, 1) = 'C' ;
+Where LEFT(last_name, 1) = 'A' or LEFT(last_name, 1) = 'B' or LEFT(last_name, 1) = 'C';
 
 -- 12. Format a payment_date using the following format e.g "22/1/2016"
 Select CONVERT(varchar, payment_date, 1)
@@ -93,13 +93,13 @@ From film;
 -- NOTE: Also show the count of movies against each actor
 Select actor.first_name, actor.last_name, count(film_id)
 From actor
-INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id;
-Where COUNT(UNIQUE film_actor.actor_id) > 25
+INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id
+Where COUNT(UNIQUE film_actor.actor_id) > 25;
 
 -- 17.Merge together the customer table and the address table, including any other supplementary lookup tables.
 -- 		 Then recast all fields with dates as DateTime
 Select cast(create_date as DATETIME) AS create_date_time,cast(last_update as DATETIME) AS lase_update_time
-From address
+From address;
 
 Select *
 From address
