@@ -10,8 +10,8 @@
 Select *
 From film
 Where title IN (Select title
-								From film
-								Where rating = 'PG' OR 'PG-13');
+From film
+Where rating = 'PG' OR 'PG-13');
 
 
 -- 2. List all staff members (first name, last name, email) with missing passwords
@@ -35,8 +35,8 @@ Select customer.*
 From customer
 INNER JOIN payment ON payment.customer_id = customer.customer_id
 Where customer_id IN (Select customer_id
-								From customer
-								Where rental_id IS NOT NULL;
+From customer
+Where rental_id IS NOT NULL;
 
 -- 6. List the top 10 newest customers across all stores
 Select *
@@ -109,15 +109,3 @@ From address
 Select *
 From address
 INNER JOIN customer ON address.address_id = customer.address_id AND cast(create_date as DATETIME) AND cast(last_update as DATETIME);
-
-B. Do not have a compiler on this computer (online compilers are having lots of problems with syntax of insert statements) so creating these queries without the ability to check.
--- 18.a. What types of movies should the theatre show to maximize profits?
--- 18.b. What view(s) would you want to make to simplify analyzing this data?
-A. Movies with the highest rental rate.
-B. film_list, staff_list
-
--- 19. If you had to add a new table for families of customers (i.e. relationships between customers), what would it relate to? What primary and foreign keys would you suggest?
-It would relate to last names being the constraint. last_name would be the primary key, address_id could be the foreign key.
-
--- 20. What was the percentage increase or decrease in the number of tickets sold from May 2015 to April 2015?
-I can't run this but from looking at the data it looks like the date parameters of 2015 fall outside the data given.
