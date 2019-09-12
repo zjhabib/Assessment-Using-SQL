@@ -1,9 +1,5 @@
 -- Using csv datasets data/Sakila.zip
 -- Documentation on Sakila can be found here: https://dev.mysql.com/doc/sakila/en/
--- All of the questions will involve querying only one table except for the last question (16.) which does involve joining.
--- You can use SQL, MySQL, SAS's proc sql, postgreSQL, or pseudo code to answer all of the following questions.
--- Please return your answers only (no results) as a .sql or .txt file (and include any comments to explain your reasoning) within
---  -- 24 hours of receipt.
 
 
 -- 1. List all movies that are either PG OR PG-13 using IN operator
