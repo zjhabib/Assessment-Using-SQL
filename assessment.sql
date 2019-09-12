@@ -32,7 +32,7 @@ From customer
 INNER JOIN payment ON payment.customer_id = customer.customer_id
 Where customer_id IN (Select customer_id
 From customer
-Where rental_id IS NOT NULL;
+Where rental_id IS NOT NULL);
 
 -- 6. List the top 10 newest customers across all stores
 Select *
@@ -83,9 +83,10 @@ GROUP BY rating;
 -- NOTE: Use a CASE WHEN statement to set up two new fields and count them.
 Select film_id
 CASE
-	WHEN description LIKE '%Crocodile%' THEN count(film_id)
-	WHEN description LIKE '%Shark%' THEN count(film_id)
-	ELSE "This movie has no Crocodiles or Sharks"
+    WHEN description LIKE '%Crocodile%' THEN count(film_id)
+    WHEN description LIKE '%Shark%' THEN count(film_id)
+    ELSE "This movie has no Crocodiles or Sharks"
+END AS CountId
 From film;
 
 -- 16. List the actors (firstName, lastName) who acted in strictly more than (>) 25 movies.
@@ -95,10 +96,8 @@ From actor
 INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id;
 Where COUNT(UNIQUE film_actor.actor_id) > 25
 
--- 17.a. Merge together the customer table and the address table, including any other supplementary lookup tables.
+-- 17.Merge together the customer table and the address table, including any other supplementary lookup tables.
 -- 		 Then recast all fields with dates as DateTime
--- 17.b. Are there any customers whose last_update field differs from the address last_update?
-A.
 Select cast(create_date as DATETIME) AS create_date_time,cast(last_update as DATETIME) AS lase_update_time
 From address
 
