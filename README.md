@@ -1,4 +1,4 @@
-##SQL Assessment
+## SQL Assessment
 
 ### Project Objectives
 
