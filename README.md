@@ -2,4 +2,4 @@
 
 ### Project Objectives
 
-For this project I was tasked to create SQL queries using datasets from Sakila.
+For this assessment I was tasked to create SQL queries using datasets from Sakila.
